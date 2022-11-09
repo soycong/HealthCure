@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/user/AndroidStudioProjects/app-master 2/app/src/main/res/layout/activity_main.xml" value="0.33" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/app-master 2/app/src/main/res/layout/fragment1.xml" value="0.11851851851851852" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/app-master 3/app/src/main/res/layout/activity_main.xml" value="0.3240506329113924" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/app-master 3/app/src/main/res/layout/content_main.xml" value="0.36614583333333334" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/app-master 3/app/src/main/res/layout/fragment1.xml" value="0.36614583333333334" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/app-master 3/app/src/main/res/layout/fragment_ex1.xml" value="0.36614583333333334" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/app-master 3/app/src/main/res/layout/fragment_ex2.xml" value="0.36614583333333334" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/app-master 3/app/src/main/res/layout/fragment_ex3.xml" value="0.36614583333333334" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/app-master 3/app/src/main/res/layout/fragment_exercise1.xml" value="0.3515625" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/app-master 3/app/src/main/res/layout/fragment_exercise2.xml" value="0.36614583333333334" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/app-master 3/app/src/main/res/layout/fragment_exercise3.xml" value="0.36614583333333334" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/app-master 3/app/src/main/res/layout/fragment_exercise4.xml" value="0.36614583333333334" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/app-master 3/app/src/main/res/layout/fragment_exercise5.xml" value="0.36614583333333334" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/app-master 3/app/src/main/res/layout/fragment_exercise6.xml" value="0.36614583333333334" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/app-master 3/app/src/main/res/layout/fragment_exercise7.xml" value="0.36614583333333334" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/app-master 3/app/src/main/res/layout/fragment_home.xml" value="0.36614583333333334" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/app-master 3/app/src/main/res/layout/fragment_mypage.xml" value="0.33" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/app-master 3/app/src/main/res/layout/fragment_mypageedit.xml" value="0.33" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/app-master 3/app/src/main/res/menu/activity_main_drawer.xml" value="0.36614583333333334" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/app-master 3/app/src/main/res/menu/main.xml" value="0.36614583333333334" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/app-master 3/app/src/main/res/menu/menu_bottom.xml" value="0.36614583333333334" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/app-master 4/app/src/main/res/layout/activity_main.xml" value="0.36614583333333334" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/app-master 4/app/src/main/res/layout/checklist_fragment.xml" value="0.36614583333333334" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/app-master 4/app/src/main/res/layout/exerciselist_exercise1.xml" value="0.36614583333333334" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/app-master 4/app/src/main/res/layout/exerciselist_exercise10.xml" value="0.36614583333333334" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/app-master 4/app/src/main/res/layout/exerciselist_exercise11.xml" value="0.36614583333333334" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/app-master 4/app/src/main/res/layout/exerciselist_exercise12.xml" value="0.36614583333333334" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/app-master 4/app/src/main/res/layout/exerciselist_exercise13.xml" value="0.36614583333333334" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/app-master 4/app/src/main/res/layout/exerciselist_exercise14.xml" value="0.36614583333333334" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/app-master 4/app/src/main/res/layout/exerciselist_exercise15.xml" value="0.36614583333333334" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/app-master 4/app/src/main/res/layout/exerciselist_exercise16.xml" value="0.36614583333333334" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/app-master 4/app/src/main/res/layout/exerciselist_exercise17.xml" value="0.36614583333333334" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/app-master 4/app/src/main/res/layout/exerciselist_exercise18.xml" value="0.36614583333333334" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/app-master 4/app/src/main/res/layout/exerciselist_exercise19.xml" value="0.36614583333333334" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/app-master 4/app/src/main/res/layout/exerciselist_exercise2.xml" value="0.36614583333333334" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/app-master 4/app/src/main/res/layout/exerciselist_exercise20.xml" value="0.36614583333333334" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/app-master 4/app/src/main/res/layout/exerciselist_exercise21.xml" value="0.36614583333333334" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/app-master 4/app/src/main/res/layout/exerciselist_exercise22.xml" value="0.36614583333333334" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/app-master 4/app/src/main/res/layout/exerciselist_exercise23.xml" value="0.36614583333333334" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/app-master 4/app/src/main/res/layout/exerciselist_exercise24.xml" value="0.36614583333333334" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/app-master 4/app/src/main/res/layout/exerciselist_exercise25.xml" value="0.36614583333333334" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/app-master 4/app/src/main/res/layout/exerciselist_exercise26.xml" value="0.36614583333333334" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/app-master 4/app/src/main/res/layout/exerciselist_exercise27.xml" value="0.36614583333333334" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/app-master 4/app/src/main/res/layout/exerciselist_exercise28.xml" value="0.36614583333333334" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/app-master 4/app/src/main/res/layout/exerciselist_exercise29.xml" value="0.36614583333333334" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/app-master 4/app/src/main/res/layout/exerciselist_exercise3.xml" value="0.36614583333333334" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/app-master 4/app/src/main/res/layout/exerciselist_exercise30.xml" value="0.36614583333333334" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/app-master 4/app/src/main/res/layout/exerciselist_exercise31.xml" value="0.36614583333333334" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/app-master 4/app/src/main/res/layout/exerciselist_exercise32.xml" value="0.36614583333333334" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/app-master 4/app/src/main/res/layout/exerciselist_exercise33.xml" value="0.36614583333333334" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/app-master 4/app/src/main/res/layout/exerciselist_exercise4.xml" value="0.36614583333333334" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/app-master 4/app/src/main/res/layout/exerciselist_exercise5.xml" value="0.36614583333333334" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/app-master 4/app/src/main/res/layout/exerciselist_exercise6.xml" value="0.36614583333333334" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/app-master 4/app/src/main/res/layout/exerciselist_exercise7.xml" value="0.36614583333333334" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/app-master 4/app/src/main/res/layout/exerciselist_exercise8.xml" value="0.36614583333333334" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/app-master 4/app/src/main/res/layout/exerciselist_exercise9.xml" value="0.36614583333333334" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/app-master 4/app/src/main/res/layout/fragment_exercise17.xml" value="0.36614583333333334" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/app-master 4/app/src/main/res/layout/fragment_exercise9.xml" value="0.36614583333333334" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/app-master 4/app/src/main/res/menu/main.xml" value="0.1" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/app/app/src/main/res/drawable-v24/item_color.xml" value="0.203" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/app/app/src/main/res/drawable/ic_menu_gallery.xml" value="0.203" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/app/app/src/main/res/drawable/side_nav_bar.xml" value="0.203" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/app/app/src/main/res/layout/activity_exercise.xml" value="0.36614583333333334" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/app/app/src/main/res/layout/activity_home.xml" value="0.36614583333333334" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/app/app/src/main/res/layout/activity_main.xml" value="0.36614583333333334" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/app/app/src/main/res/layout/app_bar_main.xml" value="0.12777777777777777" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/app/app/src/main/res/layout/content_main.xml" value="0.36614583333333334" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/app/app/src/main/res/layout/fragment1.xml" value="0.36614583333333334" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/app/app/src/main/res/layout/fragment2.xml" value="0.36614583333333334" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/app/app/src/main/res/layout/fragment3.xml" value="0.36614583333333334" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/app/app/src/main/res/layout/fragment_ex2.xml" value="0.36614583333333334" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/app/app/src/main/res/layout/fragment_ex3.xml" value="0.36614583333333334" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/app/app/src/main/res/layout/fragment_ex_fin.xml" value="0.36614583333333334" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/app/app/src/main/res/layout/fragment_gallery.xml" value="0.36614583333333334" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/app/app/src/main/res/layout/fragment_home.xml" value="0.36614583333333334" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/app/app/src/main/res/layout/fragment_slideshow.xml" value="0.36614583333333334" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/app/app/src/main/res/layout/fragment_warmup.xml" value="0.36614583333333334" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/app/app/src/main/res/layout/nav_header_main.xml" value="0.3446557971014493" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/app/app/src/main/res/menu/menu_bottom.xml" value="0.36614583333333334" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

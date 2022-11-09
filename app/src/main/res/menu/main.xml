@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/exercise9"
+        android:title="거꾸로 누워서 밀기" />
+    <item
+        android:id="@+id/exercise10"
+        android:title="앉아서 다리 모으기" />
+    <item
+        android:id="@+id/exercise11"
+        android:title="앉아서 위로 밀기" />
+    <item
+        android:id="@+id/exercise12"
+        android:title="서서 어깨 들어올리기" />
+    <item
+        android:id="@+id/exercise13"
+        android:title="바벨 끌어당기기" />
+    <item
+        android:id="@+id/exercise14"
+        android:title="턱걸이" />
+    <item
+        android:id="@+id/exercise15"
+        android:title="바벨 들어올리기" />
+    <item
+        android:id="@+id/exercise16"
+        android:title="앉아서 당겨 내리기" />
+    <item
+        android:id="@+id/exercise17"
+        android:title="앉아서 다리 벌리기" />
+    <item
+        android:id="@+id/exercise18"
+        android:title="비스듬히 누워서 밀기" />
+    <item
+        android:id="@+id/exercise19"
+        android:title="앉아서 다리 굽히기" />
+    <item
+        android:id="@+id/exercise20"
+        android:title="실내 자전거타기" />
+    <item
+        android:id="@+id/exercise21"
+        android:title="파워클린" />
+    <item
+        android:id="@+id/exercise22"
+        android:title="한발 앞으로 내밀고 앉았다 일어서기" />
+    <item
+        android:id="@+id/exercise1"
+        android:orderInCategory="100"
+        android:title="원판 던지기"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/exercise2"
+        android:orderInCategory="100"
+        android:title="몸통 들어올리기"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/exercise3"
+        android:orderInCategory="100"
+        android:title="앉아서 몸통 움츠리기"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/exercise4"
+        android:orderInCategory="100"
+        android:title="앉아서 다리 밀기"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/exercise5"
+        android:orderInCategory="100"
+        android:title="발 닿기"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/exercise6"
+        android:orderInCategory="100"
+        android:title="앉아서 다리 펴기"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/exercise7"
+        android:orderInCategory="100"
+        android:title="매달려서 다리 들기"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/exercise8"
+        android:title="앉아서 모으기" />
+    <item
+        android:id="@+id/exercise23"
+        android:title="앉아서 뒤로 당기기" />
+    <item
+        android:id="@+id/exercise24"
+        android:title="뒤꿈치 들기" />
+    <item
+        android:id="@+id/exercise25"
+        android:title="트레드밀에서 걷기" />
+    <item
+        android:id="@+id/exercise26"
+        android:title="누워서 밀기" />
+    <item
+        android:id="@+id/exercise27"
+        android:title="허리 굽혀 덤벨 들기" />
+    <item
+        android:id="@+id/exercise28"
+        android:title="앉았다 일어서기" />
+    <item
+        android:id="@+id/exercise29"
+        android:title="계단 뛰어 오르기" />
+    <item
+        android:id="@+id/exercise30"
+        android:title="계단 올라갔다 내려오기" />
+    <item
+        android:id="@+id/exercise31"
+        android:title="앉아서 밀기" />
+    <item
+        android:id="@+id/exercise32"
+        android:title="몸 기울이기/회전하기" />
+    <item
+        android:id="@+id/exercise33"
+        android:title="옆구리 늘리기" />
+</menu>

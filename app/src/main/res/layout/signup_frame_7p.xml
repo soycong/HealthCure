@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFCDD2"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="400dp"
+        android:layout_height="400dp"
+        android:gravity="center"
+        android:text="정보 입력이 완료 되었어요.             그럼 이제 시작해볼까요 ?"
+        android:textColor="#000000"
+        android:textSize="50dp" />
+
+    <Button
+        android:id="@+id/button7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="시작하기" />
+
+</LinearLayout>
