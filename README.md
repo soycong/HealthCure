@@ -1,5 +1,7 @@
 # HealthCure: 장애인을 위한 운동 추천 어플
 
+![image](https://user-images.githubusercontent.com/62353647/202908243-ac6b2aba-9760-455e-9ab5-c454c5d58f18.png)
+
 ## 2022년도 체육종합 데이터 분석ㆍ활용 경진대회
 ![image](https://user-images.githubusercontent.com/62353647/202624753-524b1502-1cf5-42c9-bf91-80e2433172ad.jpeg)
 > [공고문 출처 링크](http://kspo.or.kr/kspo/bbs/B0000099/view.do?nttId=60750&menuNo=200435&pageIndex=1)  
