@@ -27,9 +27,11 @@
 * ***어플 개발 언어: Android Studio(Java)***
 * 전체 어플 구조  
 ![image](https://user-images.githubusercontent.com/62353647/202903941-a1dc1eef-e26b-434f-8c06-bf94f3fe253b.png)
+
 ---
 ## 어플 사진
 ![image](https://user-images.githubusercontent.com/62353647/202908868-3bf7b141-7cd1-441d-9f16-2b1803660a53.png)
+
 ---
 ## 시연 영상
 ***시연 영상 Youtube 링크***
