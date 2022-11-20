@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="exlist_information">
+        <item name="android:textSize">
+            14sp
+        </item>
+        <item name="android:textColor">
+            #F1F1F1
+        </item>
+    </style>
+
+    <style name="exlist_name">
+        <item name="android:textSize">
+            24sp
+        </item>
+        <item name="android:textColor">
+            #F1F1F1
+        </item>
+    </style>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:textViewStyle">@style/customTextViewFontStyle</item>
+        <item name="android:buttonStyle">@style/customButtonFontStyle</item>
+        <item name="android:editTextStyle">@style/customEditTextFontStyle</item>
+        <item name="android:radioButtonStyle">@style/customRadioButtonFontStyle</item>
+        <item name="android:checkboxStyle">@style/customCheckboxFontStyle</item>
+    </style>
+</resources>
