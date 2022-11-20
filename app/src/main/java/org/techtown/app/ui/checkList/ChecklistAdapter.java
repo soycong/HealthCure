@@ -16,23 +16,18 @@ import java.util.ArrayList;
 public class ChecklistAdapter extends RecyclerView.Adapter<ChecklistAdapter.ViewHolder> implements OnHealthItemClickListener{
     ArrayList<CheckList> items = new ArrayList<CheckList>();
     OnHealthItemClickListener listener;
-
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(viewGroup.getContext());
         View itemView = inflater.inflate(R.layout.checklist_item,viewGroup,false);
-
         return new ViewHolder(itemView,this);
     }
-
     @Override
     public void onBindViewHolder(@NonNull ViewHolder viewHolder, int position) {
-
         CheckList item = items.get(position);
         viewHolder.setItem(item);
     }
-
     @Override
     public int getItemCount() {
         return items.size();
@@ -49,10 +44,10 @@ public class ChecklistAdapter extends RecyclerView.Adapter<ChecklistAdapter.View
     public void setItem(int position, CheckList item){
         items.set(position,item);
     }
-
     public void setOnItemClickListener(OnHealthItemClickListener listener){
         this.listener = listener;
     }
+
     public void onItemClick(ViewHolder holder, View view, int position){
         if (listener != null){
             listener.onItemClick(holder,view,position);
@@ -64,15 +59,12 @@ public class ChecklistAdapter extends RecyclerView.Adapter<ChecklistAdapter.View
         CheckBox checkBox;
         public ViewHolder(View itemView,final ChecklistAdapter listener){
             super(itemView);
-
             textView = itemView.findViewById(R.id.textView);
             checkBox = itemView.findViewById(R.id.checkBox);
-
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     int position =getAdapterPosition();
-
                     if(listener != null){
                         listener.onItemClick(ViewHolder.this,view,position);
                     }

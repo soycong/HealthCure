@@ -1,33 +1,48 @@
 package org.techtown.app.ui.checkList;
 
+import android.content.Context;
+import android.content.SharedPreferences;
+import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
+import android.speech.tts.TextToSpeech;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import org.techtown.app.MainActivity;
 import org.techtown.app.R;
 
-public class CheckList_Fragment extends Fragment {
-    static String n1;
-    static String n2;static String n3; static String n4; static String n5; static String n6;
+import java.util.ArrayList;
+import java.util.Locale;
+
+public class CheckList_Fragment extends Fragment implements TextToSpeech.OnInitListener{
+
+    static String n1; static String n2;static String n3; static String n4; static String n5; static String n6;
     static String n7; static String n8; static String n9; static String n10; static String n11; static String n12;
     static String n13; static String n14; static String n15; static String n16; static String n17; static String n18;
     static String n19; static String n20; static String n21; static String n22; static String n23; static String n24;
     static String n25; static String n26; static String n27; static String n28; static String n29; static String n30;
     static String n31; static String n32; static String n33;
-
+    public static String s;
+    private TextToSpeech tts;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         ViewGroup rootView = (ViewGroup) inflater.inflate(
                 R.layout.checklist_fragment, container, false);
-
+        ((MainActivity)getActivity()).getSupportActionBar().setTitle("CheckList");
+        ((MainActivity)getActivity()).getSupportActionBar().setDisplayHomeAsUpEnabled(false);
         if(savedInstanceState != null){ // 저장한 값 불러옴
             n1 = savedInstanceState.getString("1");
             n2 = savedInstanceState.getString("2");
@@ -65,18 +80,33 @@ public class CheckList_Fragment extends Fragment {
         }
 
         RecyclerView recyclerView = rootView.findViewById(R.id.recyclerview);
-        CheckBox checkBox = rootView.findViewById(R.id.checkBox);
-
         LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity().getBaseContext(), LinearLayoutManager.VERTICAL,false);
         recyclerView.setLayoutManager(layoutManager);
-
         ChecklistAdapter adapter = new ChecklistAdapter();
+        SharedPreferences sharedPreferences111 = getActivity().getSharedPreferences("warmup", Context.MODE_PRIVATE);
+        SharedPreferences sharedPreferences222 = getActivity().getSharedPreferences("main", Context.MODE_PRIVATE);
+        SharedPreferences sharedPreferences333 = getActivity().getSharedPreferences("finish", Context.MODE_PRIVATE);
+        String warmup = sharedPreferences111.getString("warmup", "");
+        String main = sharedPreferences222.getString("main", "");
+        String finish = sharedPreferences333.getString("finish", "");
+        Boolean warmupCheck = sharedPreferences111.getBoolean("warmupCheck",false);
+        Boolean mainCheck = sharedPreferences222.getBoolean("mainCheck",false);
+        Boolean finishCheck = sharedPreferences333.getBoolean("finishCheck",false);
 
-        adapter.addItem(new CheckList("준비 운동",false));
-        adapter.addItem(new CheckList("본 운동",false));
-        adapter.addItem(new CheckList("마무리 운동",false));
+        if (warmup.equals("")){
+        }else {
+            adapter.addItem(new CheckList(warmup,warmupCheck));
+        }
+        if (warmup.equals("")){
 
+        }else {
+            adapter.addItem(new CheckList(main,mainCheck));
+        }
+        if (warmup.equals("")){
 
+        }else {
+            adapter.addItem(new CheckList(finish,finishCheck));
+        }
         if(n1 !=null) { // 첫 번째 운동 변수에 값이 있을때
             adapter.addItem(new CheckList(n1,true)); //체크 리스트에 추가
         }else {
@@ -87,7 +117,6 @@ public class CheckList_Fragment extends Fragment {
                 }
             }
         }
-
         if(n2 !=null) { // 첫 번째 운동 변수에 값이 있을때
             adapter.addItem(new CheckList(n2,true)); //체크 리스트에 추가
         }else {
@@ -98,7 +127,6 @@ public class CheckList_Fragment extends Fragment {
                 }
             }
         }
-
         if(n3 !=null) { // 첫 번째 운동 변수에 값이 있을때
             adapter.addItem(new CheckList(n3,true)); //체크 리스트에 추가
         }else {
@@ -109,7 +137,6 @@ public class CheckList_Fragment extends Fragment {
                 }
             }
         }
-
         if(n4 !=null) { // 첫 번째 운동 변수에 값이 있을때
             adapter.addItem(new CheckList(n4,true)); //체크 리스트에 추가
         }else {
@@ -120,7 +147,6 @@ public class CheckList_Fragment extends Fragment {
                 }
             }
         }
-
         if(n5 !=null) { // 첫 번째 운동 변수에 값이 있을때
             adapter.addItem(new CheckList(n5,true)); //체크 리스트에 추가
         }else {
@@ -131,7 +157,6 @@ public class CheckList_Fragment extends Fragment {
                 }
             }
         }
-
         if(n6 !=null) { // 첫 번째 운동 변수에 값이 있을때
             adapter.addItem(new CheckList(n6,true)); //체크 리스트에 추가
         }else {
@@ -142,7 +167,6 @@ public class CheckList_Fragment extends Fragment {
                 }
             }
         }
-
         if(n7 !=null) { // 첫 번째 운동 변수에 값이 있을때
             adapter.addItem(new CheckList(n7,true)); //체크 리스트에 추가
         }else {
@@ -153,7 +177,6 @@ public class CheckList_Fragment extends Fragment {
                 }
             }
         }
-
         if(n8 !=null) { // 첫 번째 운동 변수에 값이 있을때
             adapter.addItem(new CheckList(n8,true)); //체크 리스트에 추가
         }else {
@@ -164,7 +187,6 @@ public class CheckList_Fragment extends Fragment {
                 }
             }
         }
-
         if(n9 !=null) { // 첫 번째 운동 변수에 값이 있을때
             adapter.addItem(new CheckList(n9,true)); //체크 리스트에 추가
         }else {
@@ -175,7 +197,6 @@ public class CheckList_Fragment extends Fragment {
                 }
             }
         }
-
         if(n10 !=null) { // 첫 번째 운동 변수에 값이 있을때
             adapter.addItem(new CheckList(n10,true)); //체크 리스트에 추가
         }else {
@@ -186,7 +207,6 @@ public class CheckList_Fragment extends Fragment {
                 }
             }
         }
-
         if(n11 !=null) { // 첫 번째 운동 변수에 값이 있을때
             adapter.addItem(new CheckList(n11,true)); //체크 리스트에 추가
         }else {
@@ -197,7 +217,6 @@ public class CheckList_Fragment extends Fragment {
                 }
             }
         }
-
         if(n12 !=null) { // 첫 번째 운동 변수에 값이 있을때
             adapter.addItem(new CheckList(n12,true)); //체크 리스트에 추가
         }else {
@@ -208,7 +227,6 @@ public class CheckList_Fragment extends Fragment {
                 }
             }
         }
-
         if(n13 !=null) { // 첫 번째 운동 변수에 값이 있을때
             adapter.addItem(new CheckList(n13,true)); //체크 리스트에 추가
         }else {
@@ -219,7 +237,6 @@ public class CheckList_Fragment extends Fragment {
                 }
             }
         }
-
         if(n14 !=null) { // 첫 번째 운동 변수에 값이 있을때
             adapter.addItem(new CheckList(n14,true)); //체크 리스트에 추가
         }else {
@@ -230,7 +247,6 @@ public class CheckList_Fragment extends Fragment {
                 }
             }
         }
-
         if(n15 !=null) { // 첫 번째 운동 변수에 값이 있을때
             adapter.addItem(new CheckList(n15,true)); //체크 리스트에 추가
         }else {
@@ -241,7 +257,6 @@ public class CheckList_Fragment extends Fragment {
                 }
             }
         }
-
         if(n16 !=null) { // 첫 번째 운동 변수에 값이 있을때
             adapter.addItem(new CheckList(n16,true)); //체크 리스트에 추가
         }else {
@@ -252,7 +267,6 @@ public class CheckList_Fragment extends Fragment {
                 }
             }
         }
-
         if(n17 !=null) { // 첫 번째 운동 변수에 값이 있을때
             adapter.addItem(new CheckList(n17,true)); //체크 리스트에 추가
         }else {
@@ -263,7 +277,6 @@ public class CheckList_Fragment extends Fragment {
                 }
             }
         }
-
         if(n18 !=null) { // 첫 번째 운동 변수에 값이 있을때
             adapter.addItem(new CheckList(n18,true)); //체크 리스트에 추가
         }else {
@@ -274,7 +287,6 @@ public class CheckList_Fragment extends Fragment {
                 }
             }
         }
-
         if(n19 !=null) { // 첫 번째 운동 변수에 값이 있을때
             adapter.addItem(new CheckList(n19,true)); //체크 리스트에 추가
         }else {
@@ -285,7 +297,6 @@ public class CheckList_Fragment extends Fragment {
                 }
             }
         }
-
         if(n20 !=null) { // 첫 번째 운동 변수에 값이 있을때
             adapter.addItem(new CheckList(n20,true)); //체크 리스트에 추가
         }else {
@@ -296,7 +307,6 @@ public class CheckList_Fragment extends Fragment {
                 }
             }
         }
-
         if(n21 !=null) { // 첫 번째 운동 변수에 값이 있을때
             adapter.addItem(new CheckList(n21,true)); //체크 리스트에 추가
         }else {
@@ -307,7 +317,6 @@ public class CheckList_Fragment extends Fragment {
                 }
             }
         }
-
         if(n22 !=null) { // 첫 번째 운동 변수에 값이 있을때
             adapter.addItem(new CheckList(n22,true)); //체크 리스트에 추가
         }else {
@@ -318,7 +327,6 @@ public class CheckList_Fragment extends Fragment {
                 }
             }
         }
-
         if(n23 !=null) { // 첫 번째 운동 변수에 값이 있을때
             adapter.addItem(new CheckList(n23,true)); //체크 리스트에 추가
         }else {
@@ -329,7 +337,6 @@ public class CheckList_Fragment extends Fragment {
                 }
             }
         }
-
         if(n24 !=null) { // 첫 번째 운동 변수에 값이 있을때
             adapter.addItem(new CheckList(n24,true)); //체크 리스트에 추가
         }else {
@@ -340,7 +347,6 @@ public class CheckList_Fragment extends Fragment {
                 }
             }
         }
-
         if(n25 !=null) { // 첫 번째 운동 변수에 값이 있을때
             adapter.addItem(new CheckList(n25,true)); //체크 리스트에 추가
         }else {
@@ -351,7 +357,6 @@ public class CheckList_Fragment extends Fragment {
                 }
             }
         }
-
         if(n26 !=null) { // 첫 번째 운동 변수에 값이 있을때
             adapter.addItem(new CheckList(n26,true)); //체크 리스트에 추가
         }else {
@@ -362,7 +367,6 @@ public class CheckList_Fragment extends Fragment {
                 }
             }
         }
-
         if(n27 !=null) { // 첫 번째 운동 변수에 값이 있을때
             adapter.addItem(new CheckList(n27,true)); //체크 리스트에 추가
         }else {
@@ -373,7 +377,6 @@ public class CheckList_Fragment extends Fragment {
                 }
             }
         }
-
         if(n28 !=null) { // 첫 번째 운동 변수에 값이 있을때
             adapter.addItem(new CheckList(n28,true)); //체크 리스트에 추가
         }else {
@@ -384,7 +387,6 @@ public class CheckList_Fragment extends Fragment {
                 }
             }
         }
-
         if(n29 !=null) { // 첫 번째 운동 변수에 값이 있을때
             adapter.addItem(new CheckList(n29,true)); //체크 리스트에 추가
         }else {
@@ -395,7 +397,6 @@ public class CheckList_Fragment extends Fragment {
                 }
             }
         }
-
         if(n30 !=null) { // 첫 번째 운동 변수에 값이 있을때
             adapter.addItem(new CheckList(n30,true)); //체크 리스트에 추가
         }else {
@@ -427,7 +428,6 @@ public class CheckList_Fragment extends Fragment {
                 }
             }
         }
-
         if(n33 !=null) { // 첫 번째 운동 변수에 값이 있을때
             adapter.addItem(new CheckList(n33,true)); //체크 리스트에 추가
         }else {
@@ -438,23 +438,42 @@ public class CheckList_Fragment extends Fragment {
                 }
             }
         }
-
-
-
-
-        recyclerView.setAdapter(adapter);
-
-        adapter.setOnItemClickListener(new OnHealthItemClickListener() { //아이템 선택 되었을때
-            @Override
-            public void onItemClick(ChecklistAdapter.ViewHolder holder, View view, int position) {
-                CheckList item = adapter.getItem(position);
-                Toast.makeText(getActivity().getBaseContext(),"아이템 선택됨: "+item.getHitem(), Toast.LENGTH_LONG).show();
+        SharedPreferences sharedPreferences9 = getActivity().getSharedPreferences("exercise", Context.MODE_PRIVATE);
+        String exercise = sharedPreferences9.getString("exercise", "");
+        if(exercise.equals("시각장애")){
+            tts = new TextToSpeech(getActivity(), this);
+            s="체크리스트 화면입니다";
+            speakOut();
+            CheckList item1 = adapter.getItem(0);
+            item1.getHitem();
+            CheckList item2 = adapter.getItem(1);
+            item2.getHitem();
+            CheckList item3 = adapter.getItem(2);
+            item3.getHitem();
+            String[] beer = {item1.getHitem(), item2.getHitem(), item3.getHitem()};
+            if(finishCheck) {
+                Handler handler = new Handler();
+                handler.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        s = "오늘은 " + beer[0] + "\n" + beer[1] + "\n" + beer[2] + "를 완료했습니다.";
+                        speakOut();
+                    }
+                }, 3000); //딜레이 타임 조절
+            }else {
+                Handler handler = new Handler();
+                handler.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        s = "오늘은 완료한 운동이 없습니다 \n 홈 화면으로 돌아가 추천운동을 시작해주세요.";
+                        speakOut();
+                    }
+                }, 3000);
             }
-        });
-
+        }
+        recyclerView.setAdapter(adapter);
         return rootView;
     }
-
     @Override
     public void onSaveInstanceState(@NonNull Bundle outState){ //프래그먼트 이동하기전 값 저장
         super.onSaveInstanceState(outState);
@@ -491,6 +510,34 @@ public class CheckList_Fragment extends Fragment {
         outState.putString("31",n31);
         outState.putString("32",n32);
         outState.putString("33",n33);
+    }
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
+    private void speakOut(){
+        tts.setPitch((float)1); // 음성 톤 높이 지정
+        tts.setSpeechRate((float)0.8); // 음성 속도 지정
+        tts.speak(s, TextToSpeech.QUEUE_ADD, null, "id1");
+    }
+    @Override
+    public void onDestroy() {
+        if(tts!=null){ // 사용한 TTS객체 제거
+            tts.stop();
+            tts.shutdown();
+        }
+        super.onDestroy();
+    }
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
+    @Override
+    public void onInit(int status) { // OnInitListener를 통해서 TTS 초기화
+        if(status == TextToSpeech.SUCCESS){
+            int result = tts.setLanguage(Locale.KOREA); // TTS언어 한국어로 설정
+            if(result == TextToSpeech.LANG_NOT_SUPPORTED || result == TextToSpeech.LANG_MISSING_DATA){
+                Log.e("TTS", "This Language is not supported");
+            }else{
+                speakOut();// onInit에 음성출력할 텍스트를 넣어줌
+           }
+        }else{
+            Log.e("TTS", "Initialization Failed!");
+        }
     }
 
 }

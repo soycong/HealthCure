@@ -1,6 +1,8 @@
 package org.techtown.app;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -62,13 +64,20 @@ import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashSet;
+import java.util.LinkedHashSet;
 import java.util.List;
+import java.util.Random;
+import java.util.Set;
 
 public class MainActivity extends AppCompatActivity {
 
     private AppBarConfiguration mAppBarConfiguration;
     private ActivityMainBinding binding;
-
+    private String [] array1 = new String [4];
+    private String [] array2 = new String [4];
+    private String [] array3 = new String [4];
+    private String [] array4 = new String [4];
     Home_Fragment fragment1;
     CheckList_Fragment fragment2;
     MyPage_Fragment fragment3;
@@ -79,58 +88,43 @@ public class MainActivity extends AppCompatActivity {
     Exercise22 exercise22;Exercise23 exercise23;Exercise24 exercise24;Exercise25 exercise25;Exercise26 exercise26;Exercise27 exercise27;Exercise28 exercise28;
     Exercise29 exercise29;Exercise30 exercise30;Exercise31 exercise31;Exercise32 exercise32;Exercise33 exercise33;
 
-    public int count = 0;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        SharedPreferences sharedPreferences100 = this.getSharedPreferences("rnd",MODE_PRIVATE); //정보 받아오기
+        int rnd = sharedPreferences100.getInt("rnd",0);
         fragment1 = new Home_Fragment();
         fragment2 = new CheckList_Fragment();
         fragment3 = new MyPage_Fragment();
         mypage_edit_fragment = new MyPageEdit_Fragment();
-
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-
         setSupportActionBar(binding.appBarMain.toolbar);
-
         BottomNavigationView bottomNavigation = findViewById(R.id.bottom_navigation);
-
-        //제일 처음 띄워주는 fragment
         getSupportFragmentManager().beginTransaction()
-                .replace(R.id.container, fragment1, "home").commitAllowingStateLoss();
-        getSupportActionBar().setTitle("Home");
-
+                .replace(R.id.container, fragment1, "home").commitAllowingStateLoss();   //제일 처음 띄워주는 fragment
+        getSupportActionBar().setTitle("HealthCure");
         bottomNavigation.setOnNavigationItemSelectedListener(
                 new BottomNavigationView.OnNavigationItemSelectedListener() {
                     @Override
                     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                         switch (item.getItemId()) {
                             case R.id.tab1: {
-                                Toast.makeText(getApplicationContext(), "Home 탭 선택됨", Toast.LENGTH_SHORT).show();
-                                getSupportActionBar().setTitle("Home");
-
+                                getSupportActionBar().setTitle("HealthCure");
                                 getSupportFragmentManager().beginTransaction()
                                         .replace(R.id.container, fragment1, "home").commit();
-
                                 return true;
                             }
 
                             case R.id.tab2: {
-                                Toast.makeText(getApplicationContext(), "CheckList 탭 선택됨", Toast.LENGTH_SHORT).show();
                                 getSupportActionBar().setTitle("CheckList");
-
                                 getSupportFragmentManager().beginTransaction()
                                         .replace(R.id.container, fragment2, "checkList").commit();
-
                                 return true;
                             }
 
                             case R.id.tab3: {
-                                Toast.makeText(getApplicationContext(), "MyPage 탭 선택됨", Toast.LENGTH_SHORT).show();
                                 getSupportActionBar().setTitle("MyPage");
-
                                 getSupportFragmentManager().beginTransaction()
                                             .replace(R.id.container, fragment3, "myPage").commit();
                                 return true;
@@ -139,7 +133,6 @@ public class MainActivity extends AppCompatActivity {
                         }
                     }
                 });
-
         //csv 데이터 불러오기
         // eye:시각장애 , ear:청각장애, mental:지적장애, myelopathy:척수장애
         //배열 출력 형태 : [장애 유형, 준비운동, 본운동, 마무리운동]
@@ -157,16 +150,13 @@ public class MainActivity extends AppCompatActivity {
         List<String> ear_csvList = new ArrayList<String>();
         List<String> mental_csvList = new ArrayList<String>();
         List<String> myelopathy_csvList = new ArrayList<String>();
-
         try {
             String line_eye;
             String line_ear;
             String line_mental;
             String line_myelopathy;
-
             while (((line_eye = reader_eye.readLine()) != null) && ((line_ear = reader_ear.readLine()) != null)
                     && ((line_mental = reader_mental.readLine()) != null) && ((line_myelopathy = reader_myelopathy.readLine()) != null)) {
-                // do something with "line"
                 List<String> eyeLine;
                 List<String> earLine;
                 List<String> mentalLine;
@@ -194,28 +184,38 @@ public class MainActivity extends AppCompatActivity {
             }
         }
         catch (IOException ex) {
-            // handle exception
             ex.printStackTrace();
         }
         finally {
             try {
-                /*System.out.println(eye_csvList);
-                System.out.println(ear_csvList);
-                System.out.println(mental_csvList);
-                System.out.println(myelopathy_csvList);*/
-
-                //System.out.println(myelopathy_csvList.get(0));
-
                 is_eye.close();
                 is_ear.close();
                 is_mental.close();
                 is_myelopathy.close();
             }
             catch (IOException e) {
-                // handle exception
                 e.printStackTrace();
             }
         }
+        array1 = eye_csvList.get(rnd).split(",");
+        array2 = ear_csvList.get(rnd).split(",");
+        array3 = mental_csvList.get(rnd).split(",");
+        array4 = myelopathy_csvList.get(rnd).split(",");
+
+        SharedPreferences sharedPreferences = getSharedPreferences("array1", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+
+        Set<String> set1 = new HashSet<String>(Arrays.asList(array1));
+        Set<String> set2 = new HashSet<String>(Arrays.asList(array2));
+        Set<String> set3 = new HashSet<String>(Arrays.asList(array3));
+        Set<String> set4 = new HashSet<String>(Arrays.asList(array4));
+
+        editor.putStringSet("array1", set1);
+        editor.putStringSet("array2", set2);
+        editor.putStringSet("array3", set3);
+        editor.putStringSet("array4", set4);
+
+        editor.commit();
     }
 
     public void clickBtn(View view){
@@ -225,7 +225,6 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.main, menu);
         return true;
     }
@@ -238,11 +237,9 @@ public class MainActivity extends AppCompatActivity {
         exercise21 = new Exercise21();exercise22 = new Exercise22();exercise23 = new Exercise23();exercise24 = new Exercise24();exercise25 = new Exercise25();
         exercise26 = new Exercise26();exercise27 = new Exercise27();exercise28 = new Exercise28();exercise29 = new Exercise29();exercise30 = new Exercise30();
         exercise31 = new Exercise31();exercise32 = new Exercise32();exercise33 = new Exercise33();
-
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         switch(item.getItemId()) {
-
             case android.R.id.home:
                 getSupportActionBar().setTitle("Home");
                 getSupportFragmentManager().beginTransaction()
@@ -414,16 +411,13 @@ public class MainActivity extends AppCompatActivity {
                         .replace(R.id.container, exercise33, "exercise33").commitAllowingStateLoss();
                 getSupportActionBar().setTitle("옆구리 늘리기");
                 break;
-
         }
         return super.onOptionsItemSelected((item));
     }
-
     @Override
     public boolean onSupportNavigateUp() {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
         return NavigationUI.navigateUp(navController, mAppBarConfiguration)
                 || super.onSupportNavigateUp();
     }
-
 }
